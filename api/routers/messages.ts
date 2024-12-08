@@ -4,6 +4,14 @@ import fileDb from "../fileDb";
 
 const messagesRouter = express.Router();
 
+messagesRouter.get('/', async (req, res) => {
+    const dateQuery = req.query.date as string;
+    console.log(dateQuery);
+
+    const messages = await fileDb.getMessages();
+    res.send(messages.slice(-30).reverse());
+})
+
 messagesRouter.post('/', async (req, res) => {
 
     const message: IMessageWithoutIdAndDate = {

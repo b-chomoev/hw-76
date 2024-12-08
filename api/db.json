@@ -1,1 +1,44 @@
-[{"id":"8f3f6ee6-eb30-4b5b-8d16-1ce26618463d","datetime":"2024-12-08T18:13:49.686Z","message":"","author":"John Doe"}]
+[
+  {
+    "id": "b11b3c7b-d4d4-4b88-a995-b0b57f7be1f2",
+    "message": "One",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:19.198Z"
+  },
+  {
+    "id": "d36183ad-2b95-457e-8c4f-3a1d1e9f19a0",
+    "message": "Two",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:24.668Z"
+  },
+  {
+    "id": "82c8bff0-ce32-4c39-a893-1383c96f1604",
+    "message": "Three",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:29.690Z"
+  },
+  {
+    "id": "d6e882a0-626e-480b-aa90-9834f06616d3",
+    "message": "Four",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:38.665Z"
+  },
+  {
+    "id": "baf90bed-3ef0-4aea-b48f-cfb7f0718014",
+    "message": "Five",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:42.545Z"
+  },
+  {
+    "id": "51a6ca1c-ccb3-4fde-b569-b3fdb65526fd",
+    "message": "Six",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:46.542Z"
+  },
+  {
+    "id": "747892ea-1c51-49e3-9a8c-f6a80185d428",
+    "message": "Seven",
+    "author": "Beks",
+    "datetime": "2024-12-08T18:54:56.545Z"
+  }
+]
