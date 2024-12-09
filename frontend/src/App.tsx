@@ -1,5 +1,8 @@
 import NavBar from './components/UI/NavBar/NavBar.tsx';
 import {Container, CssBaseline } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
+import NewMessage from './features/messages/containers/NewMessage.tsx';
+import Message from './features/messages/containers/Messages.tsx';
 
 const App = () => {
 
@@ -11,7 +14,11 @@ const App = () => {
       </header>
       <main>
         <Container maxWidth='xl'>
-          <h1>Hello World</h1>
+          <Routes>
+            <Route path='/' element={<Message />}/>
+            <Route path='/new-message' element={<NewMessage />}/>
+            <Route path='*' element={<h1>Not Found</h1>}/>
+          </Routes>
         </Container>
       </main>
     </>
