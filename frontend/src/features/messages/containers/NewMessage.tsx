@@ -33,6 +33,7 @@ const NewMessage = () => {
       alert('Please fill all fields');
     } else {
       await dispatch(createMessage({...form}));
+      setForm(initialState);
       toast.success('Product was successfully created');
       navigate('/');
     }

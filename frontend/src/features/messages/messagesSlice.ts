@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IMessage } from '../../types';
-import { createMessage } from './messagesThunks.ts';
+import { createMessage, fetchMessages } from './messagesThunks.ts';
 import { RootState } from '../../app/store.ts';
 
 interface Props {
@@ -17,6 +17,7 @@ const initialState: Props = {
 
 export const selectMessages = (state: RootState) => state.messages.messages;
 export const selectCreateLoading = (state: RootState) => state.messages.createLoading;
+export const selectFetchLoading = (state: RootState) => state.messages.fetchLoading;
 
 export const messagesSlice = createSlice({
   name: 'messages',
@@ -32,6 +33,16 @@ export const messagesSlice = createSlice({
       })
       .addCase(createMessage.rejected, (state) => {
         state.createLoading = false;
+      })
+      .addCase(fetchMessages.pending, (state) => {
+        state.fetchLoading = true;
+      })
+      .addCase(fetchMessages.fulfilled, (state, {payload: messages}) => {
+        state.fetchLoading = false;
+        state.messages = messages;
+      })
+      .addCase(fetchMessages.rejected, (state) => {
+        state.fetchLoading = false;
       })
   }
 });
