@@ -14,6 +14,12 @@ const Messages = () => {
 
   useEffect(() => {
     dispatch(fetchMessages());
+
+    const intervalId = setInterval(() => {
+      dispatch(fetchMessages());
+    }, 3000);
+
+    return () => clearInterval(intervalId);
   }, [dispatch]);
 
   return (
