@@ -29,16 +29,20 @@ const NewMessage = () => {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await dispatch(createMessage({...form}));
-    toast.success('Product was successfully created');
-    navigate('/');
+    if (!form.author || !form.message) {
+      alert('Please fill all fields');
+    } else {
+      await dispatch(createMessage({...form}));
+      toast.success('Product was successfully created');
+      navigate('/');
+    }
   };
 
   return (
     <>
       {isCreateLoading ? <CircularProgress/> :
         <form onSubmit={onSubmit}>
-          <Grid container direction="column" spacing={2}>
+          <Grid container direction="column" spacing={2} sx={{ width: '75%' }}>
             <Grid>
               <TextField
                 id="author"
